@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Movie = require('../api/models/movies.model.js');
 
-const movies = [
+const arrayMovies = [
     {
       title: 'The Matrix',
       director: 'Hermanas Wachowski',
@@ -56,4 +56,6 @@ mongoose.connect("mongodb+srv://root:root@cluster0.4vaqxuf.mongodb.net/albertoDB
     await Movie.insertMany(movieMap);
     console.log("Películas insertadas correctamente");
 })
+
 .catch((error) => console.log("Error insertando películas", error))
+.finally(() => mongoose.disconnect());

@@ -2,14 +2,13 @@ const mongoose = require ("mongoose");
 const Schema = mongoose.Schema;
 const  moviesSchema = new Schema(
     {
-        nombre: {type:String, required:true},
-        plataforma: [{type:String, required:true}],
-        lanzamiento: {type:Number, required:false},
-        desarrollador: [{type:String, required:false}],
-        multiplayer: {type:Boolean},
+        title: {type:String, required:true},
+        director: {type:String, required:true},
+        year: {type:Number, required:false},
+        genre: {type:String, required:false},
     }
 )
 
-const Movie = mongoose.model ("Movies", MoviesSchema);
+const Movie = mongoose.model ("Movies", moviesSchema);
 
 module.exports = Movie;
